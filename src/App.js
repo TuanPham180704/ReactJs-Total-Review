@@ -3,6 +3,7 @@ import BareInput from './BareInput'
 import Clock from './Clock'
 import { useState } from 'react'
 import Layout from './Layout'
+import BareButton from './BareButton'
 
 function App() {
   // const [name, setName] = useState('Casio')
@@ -14,6 +15,7 @@ function App() {
       {visible && <Clock name={name} />} */}
       <Layout>
         <h2>Hello Anh Em Cố Gắng Lên Nhé !!!</h2>
+        <BareButton/>
         <BareInput type='password' name='input' value='hehe' onChange={() => {}} />
       </Layout>
     </div>
