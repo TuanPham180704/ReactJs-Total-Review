@@ -12,6 +12,7 @@ const fetchAPI = () => {
 export default class Clock extends React.Component {
   constructor(props) {
     super(props)
+    console.log('constructor')
     this.state = {
       time: {
         created: new Date().toLocaleTimeString()
@@ -39,8 +40,8 @@ export default class Clock extends React.Component {
     this.setState(newState)
   }
   componentDidMount() {
+    console.log('componentDidMount')
     const seconds = document.getElementById('seconds')
-    console.log(seconds)
     fetchAPI().then((res) =>
       this.setState((prevState) => ({
         ...prevState,
@@ -53,6 +54,7 @@ export default class Clock extends React.Component {
     //   const value = document.querySelector('input').value
     //   console.log('Value input', value)
     // }
+    console.log('componentDidUpdate')
     if (this.state.list.length === 0) {
       fetchAPI().then((res) =>
         this.setState((prevState) => ({
@@ -62,6 +64,9 @@ export default class Clock extends React.Component {
       )
     }
   }
+  componentWillUnmount(){
+    console.log('componentWillUnmount');
+  }
   toggelDarkMode = () => {
     this.setState((prevState) => ({
       ...prevState,
@@ -69,10 +74,10 @@ export default class Clock extends React.Component {
     }))
   }
   handleChangInput = () => {
-    console.log('input text')
+   // console.log('input text')
   }
   render() {
-    console.log(this.state)
+    console.log('render')
     return (
       <div>
         <h3>Hello World ! {this.props.name}</h3>
