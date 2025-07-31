@@ -54,7 +54,7 @@ export default class Clock extends React.Component {
     //   const value = document.querySelector('input').value
     //   console.log('Value input', value)
     // }
-    console.log('componentDidUpdate')
+    console.log('componentDidUpdate d')
     if (this.state.list.length === 0) {
       fetchAPI().then((res) =>
         this.setState((prevState) => ({
