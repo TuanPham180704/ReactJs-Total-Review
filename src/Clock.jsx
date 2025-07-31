@@ -20,7 +20,8 @@ export default class Clock extends React.Component {
         created: new Date().getSeconds()
       },
       name: this.props.name,
-      lists: []
+      lists: [],
+      darkMode: false
     }
     this.date = '30/07/2025'
     this.getTime = this.getTime.bind(this)
@@ -47,6 +48,29 @@ export default class Clock extends React.Component {
       }))
     )
   }
+  componentDidUpdate() {
+    // if (this.setState.darkMode) {
+    //   const value = document.querySelector('input').value
+    //   console.log('Value input', value)
+    // }
+    if (this.state.list.length === 0) {
+      fetchAPI().then((res) =>
+        this.setState((prevState) => ({
+          ...prevState,
+          list: res
+        }))
+      )
+    }
+  }
+  toggelDarkMode = () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      darkMode: !prevState.darkMode
+    }))
+  }
+  handleChangInput = () => {
+    console.log('input text')
+  }
   render() {
     console.log(this.state)
     return (
@@ -55,6 +79,8 @@ export default class Clock extends React.Component {
         <h4 id='seconds'>Hom nay la {this.state.time.created}</h4>
         <h4>Giay Thu : {this.state.seconnds.created}</h4>
         <button onClick={this.getTime}>Get Time</button>
+        <button onClick={this.toggelDarkMode}>Toggle</button>
+        {this.state.darkMode && <input value={this.state.darkMode} onChange={this.handleChangInput} />}
       </div>
     )
   }
