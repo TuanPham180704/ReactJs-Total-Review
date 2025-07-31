@@ -5,6 +5,7 @@ import { useState } from 'react'
 import Layout from './Layout'
 import BareButton from './BareButton'
 import LoginConTroller from './LoginConTroller'
+import CorrectlyState from './CorrectlyState'
 
 function App() {
   // const [name, setName] = useState('Casio')
@@ -20,6 +21,7 @@ function App() {
         <BareInput type='password' name='input' value='hehe' onChange={() => {}} />
       </Layout>
       <LoginConTroller hidden={false}/>
+      <CorrectlyState/>
     </div>
   )
 }
