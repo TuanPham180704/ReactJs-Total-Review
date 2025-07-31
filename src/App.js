@@ -4,6 +4,7 @@ import Clock from './Clock'
 import { useState } from 'react'
 import Layout from './Layout'
 import BareButton from './BareButton'
+import LoginConTroller from './LoginConTroller'
 
 function App() {
   // const [name, setName] = useState('Casio')
@@ -18,6 +19,7 @@ function App() {
         <BareButton/>
         <BareInput type='password' name='input' value='hehe' onChange={() => {}} />
       </Layout>
+      <LoginConTroller hidden={false}/>
     </div>
   )
 }
