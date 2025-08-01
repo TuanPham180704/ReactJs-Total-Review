@@ -6,6 +6,7 @@ import Layout from './Layout'
 import BareButton from './BareButton'
 import LoginConTroller from './LoginConTroller'
 import CorrectlyState from './CorrectlyState'
+import ProductsList from './ProductsList/ProductsList'
 
 function App() {
   // const [name, setName] = useState('Casio')
@@ -22,6 +23,7 @@ function App() {
       </Layout>
       <LoginConTroller hidden={false}/>
       <CorrectlyState/>
+      <ProductsList/>
     </div>
   )
 }
