@@ -28,7 +28,7 @@ class Layout extends Component {
 export class Composition extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         Composition
         <Button />
         <Button className='btn-Yellow'>Yellow</Button>
@@ -36,7 +36,7 @@ export class Composition extends Component {
           left={<Button className='btn-left'>Left</Button>}
           right={<Button className='btn-Right'>Right</Button>}
         />
-      </div>
+      </React.Fragment>
     )
   }
 }
