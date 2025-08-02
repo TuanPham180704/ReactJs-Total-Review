@@ -8,6 +8,7 @@ import LoginConTroller from './LoginConTroller'
 import CorrectlyState from './CorrectlyState'
 import ProductsList from './ProductsList/ProductsList'
 import Form from './Form/Form'
+import Calculator from './Calculator/Calculator'
 
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
       <LoginConTroller hidden={false}/>
       <CorrectlyState/>
       <ProductsList/> */}
-       <Form/>
+       {/* <Form/> */}
+       <Calculator/>
     </div>
   )
 }
