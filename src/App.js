@@ -11,6 +11,7 @@ import Form from './Form/Form'
 import Calculator from './Calculator/Calculator'
 import Inheritance from './Composition-Inheritance/Inheritance'
 import Composition from './Composition-Inheritance/Composition'
+import FilterableProductTable from './ThinkinginReact/FilterableProductTable'
 
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
        {/* <Form/> */}
        {/* <Calculator/> */}
        {/* <Inheritance/> */}
-       <Composition/>
+       <FilterableProductTable/>
     </div>
   )
 }
