@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import UserEffect from './ReactHookBasic/useEffect/UserEffect'
-import User from './ReactHookBasic/useStateHook/User'
-import UserClassComponent from './ReactHookBasic/useStateHook/User.class'
+
+import Navication from './ReactHookBasic/customHook/Navication'
+import Cart from './ReactHookBasic/customHook/Cart'
 
 
 function App() {
@@ -10,8 +10,10 @@ function App() {
   
   return (
     <div className='App'>
-      {isShow && <UserEffect/>}
-      <button onClick={()=> setIsShow(false)}>Change Show Active</button>
+      {/* {isShow && <UserEffect/>}
+      <button onClick={()=> setIsShow(false)}>Change Show Active</button> */}
+      <Cart/>
+      <Navication/>
     </div>
   )
 }
