@@ -1,5 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { createContext, useEffect } from 'react'
 import { useState } from 'react'
+import UseContent from '../useContent/UseContent'
+
+export const UserContext = createContext()
 export default function UserEffect() {
   const [name, setName] = useState('Tuan Dev')
   const [age, setAge] = useState(21)
@@ -20,7 +23,7 @@ export default function UserEffect() {
             house: 'Building'
           }
         })
-      },3000)
+      }, 3000)
     })
   }
   const [, forceRerenderAge] = useState(0)
@@ -49,28 +52,27 @@ export default function UserEffect() {
   //Thường dùng khi gọi API
   useEffect(() => {
     console.log('useEffect giống componentDidUpdate')
-    getAddress().then((res) => { 
-      setAddress(prevState => {
-        const newAddress = {...prevState}
-        newAddress.city  = res.city
+    getAddress().then((res) => {
+      setAddress((prevState) => {
+        const newAddress = { ...prevState }
+        newAddress.city = res.city
         return newAddress
       })
     })
     //Cleanup function , chạy kết thúc lần một rồi mới chạy lần 2
-    return()=>{
-      console.log('Huy goi API');
+    return () => {
+      console.log('Huy goi API')
     }
   }, [])
   return (
     <div>
       <h1>useEffect Function Component</h1>
-      <ul>
-        <li>First Name : {name}</li>
-        <li>Age : {age}</li>
-        <li>Nation : {address.nation}</li>
-        <li>Street : {address.city.street}</li>
-        <li>Building : {address.city.house}</li>
-      </ul>
+      <UserContext.Provider value={{
+         name, address,age
+      }}>
+      <UseContent />
+      </UserContext.Provider>
+     
       <button onClick={handleClickAge}>Up Age</button>
       <button onClick={rerenderAge}>Up Age Rerender</button>
       <button onClick={handleClickAddress}>Change Address</button>
