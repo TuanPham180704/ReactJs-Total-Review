@@ -13,7 +13,6 @@ function App() {
       {/* {isShow && <UserEffect/>}
       <button onClick={()=> setIsShow(false)}>Change Show Active</button> */}
       <Cart/>
-      <Navication/>
     </div>
   )
 }
