@@ -1,9 +1,10 @@
 import './App.css'
-import Count from './Count'
+import Counter from './ReactHookBasic/useReducer'
+
 function App() {
   return (
     <div className='App'>
-      <Count/>
+      <Counter/>
     </div>
   )
 }
