@@ -1,17 +1,9 @@
-import { useState } from 'react'
 import './App.css'
-import Watch from './Watch'
-
-
-
-
-
+import Count from './Count'
 function App() {
-  
-  
   return (
     <div className='App'>
-      <Watch/>
+      <Count/>
     </div>
   )
 }
